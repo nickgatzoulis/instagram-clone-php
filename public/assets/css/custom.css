@@ -1,0 +1,32 @@
+.h-100v {
+  min-height: 100vh; }
+
+.auth-box {
+  padding: 2rem 2rem 1rem 2rem;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 0 5px 0;
+  color: #ccc; }
+  .auth-box .logo {
+    margin: 3rem auto; }
+  .auth-box input {
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    background: #f8f8f8; }
+  .auth-box button {
+    width: 100%;
+    margin-top: 1rem; }
+  .auth-box a {
+    text-decoration: none; }
+    .auth-box a:hover {
+      font-weight: bold; }
+  .auth-box .helper {
+    margin-top: 1rem;
+    font-size: 15px;
+    color: #aaa; }
+
+body {
+  background: #fafafa; }
+
+/*# sourceMappingURL=custom.css.map */
