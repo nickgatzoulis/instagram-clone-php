@@ -10,10 +10,10 @@ session_destroy();
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="<? echo $LNG['iso_code']; ?>">
 <head>
     <?php require_once "../../includes/header.php"; ?>
-    <title><?php echo $LNG['home_site_title']; ?></title>
+    <title><?php echo $LNG['logout_site_title']; ?></title>
 </head>
 <body>
 
@@ -21,8 +21,8 @@ session_destroy();
     <div class="row h-100v">
         <div class="col-lg-4 align-self-center m-auto auth-box">
             <img src="../assets/img/logo.png" height="100" class="logo">
-            <h4>You have been logged out.</h4>
-            <p>Redirecting to homepage in <span class="countdown"></span></p>
+            <h4><? $LNG['logout_message'] ?></h4>
+            <p><? $LNG['logout_redirect'] ?><span class="countdown"></span></p>
         </div>
     </div>
 </div>

@@ -1,13 +1,15 @@
 <?php require_once "../../includes/global_inc.php"; ?>
+<?php
+if (!isset($_SESSION['logged_in'])) {
+    header('Location: /public');
+}
+?>
 
 <!doctype html>
-<html lang="en">
+<html lang="<? echo $LNG['iso_code']; ?>">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <?php require_once "../../includes/header.php"; ?>
+    <title><?php echo $LNG['logout_site_title']; ?></title>
 </head>
 <body>
 

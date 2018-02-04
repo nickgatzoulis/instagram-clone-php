@@ -10,7 +10,7 @@ if (!empty($_SESSION['logged_in'])) {
 <?php require_once "../includes/auth.php";?>
 
 <!doctype html>
-<html lang="en">
+<html lang="<? echo $LNG['iso_code']; ?>">
 <head>
     <?php require_once "../includes/header.php"; ?>
     <title><?php echo $LNG['home_site_title']; ?></title>
