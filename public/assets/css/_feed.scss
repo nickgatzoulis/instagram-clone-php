@@ -1,0 +1,59 @@
+.feed {
+  margin: 0 auto;
+}
+.feed-row {
+  margin: 3rem auto;
+  background: #fff;
+  box-shadow: 0 0 5px 0;
+  border: 1px solid $gray-border;
+  color: $gray-border;
+
+  .feed-post {
+    padding: 0;
+
+    h3 {
+      position: relative;
+      margin-left: 3.25rem;
+      top: 0.6rem;
+      font-size: 1rem;
+      text-transform: lowercase;
+      color: $dark-navy;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .feed-user {
+      padding: 0.5rem 1rem;
+      margin-bottom: 0.75rem;
+
+      img {
+        &.thumbnail {
+          position: absolute;
+          border-radius: 50%;
+          border: 1px solid $gray-border;
+
+        }
+      }
+    }
+
+    .feed-media {
+      img {
+        &.feed-img {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .feed-reaction {
+      text-align: center;
+
+    }
+  }
+}

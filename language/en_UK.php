@@ -36,3 +36,4 @@ $LNG['logout_redirect'] = 'Redirecting to homepage in ';
 
 
 /* FEED */
+$LNG['feed_site_title'] = 'Feed - Instaphoto';

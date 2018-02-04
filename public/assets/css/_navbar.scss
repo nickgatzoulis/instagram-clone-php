@@ -1,0 +1,15 @@
+#navbar {
+  background: #fff;
+  color: $gray-border;
+  //border-bottom: 1px solid $gray-border;
+  box-shadow: 0 0 5px 0;
+
+  .fa-fw {
+    font-size: 1.8rem;
+    color: $gray-border;
+
+    &:hover {
+      color: $helper;
+    }
+  }
+}

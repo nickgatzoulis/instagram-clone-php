@@ -37,6 +37,51 @@
   .auth-box #signup-form {
     display: none; }
 
+#navbar {
+  background: #fff;
+  color: #ccc;
+  box-shadow: 0 0 5px 0; }
+  #navbar .fa-fw {
+    font-size: 1.8rem;
+    color: #ccc; }
+    #navbar .fa-fw:hover {
+      color: #aaa; }
+
+.feed {
+  margin: 0 auto; }
+
+.feed-row {
+  margin: 3rem auto;
+  background: #fff;
+  box-shadow: 0 0 5px 0;
+  border: 1px solid #ccc;
+  color: #ccc; }
+  .feed-row .feed-post {
+    padding: 0; }
+    .feed-row .feed-post h3 {
+      position: relative;
+      margin-left: 3.25rem;
+      top: 0.6rem;
+      font-size: 1rem;
+      text-transform: lowercase;
+      color: #34495e; }
+      .feed-row .feed-post h3 a {
+        color: inherit;
+        text-decoration: none; }
+        .feed-row .feed-post h3 a:hover {
+          font-weight: bold; }
+    .feed-row .feed-post .feed-user {
+      padding: 0.5rem 1rem;
+      margin-bottom: 0.75rem; }
+      .feed-row .feed-post .feed-user img.thumbnail {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid #ccc; }
+    .feed-row .feed-post .feed-media img.feed-img {
+      max-width: 100%; }
+    .feed-row .feed-post .feed-reaction {
+      text-align: center; }
+
 body {
   background: #fafafa; }
 
