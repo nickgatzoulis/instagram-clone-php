@@ -42,12 +42,12 @@ if (isset($_POST['login_submit'])) {
     if (empty($LOGIN_ERRORS)) {
         // Step 1 - Fetch user
         $result = $conn->query("SELECT * FROM users WHERE username = '$username'");
-
         // Step 2 - Check if user with supplied username exists.
         if ($result->num_rows == 0) {
             $LOGIN_ERRORS['details_invalid'] = 'Username or password is wrong.';
         } else {
             $user = $result->fetch_assoc();
+            print_r($user);
 
             // Step 3 - Check if supplied password ($password) is the same as fetched user's password
             if (password_verify($password, $user['password'])) {
