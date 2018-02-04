@@ -16,6 +16,8 @@ echo "<br/>";
 
 $REG_ERRORS = [];
 
+
+
 if (isset($_POST['signup_submit'])) {
     $username = $_POST['username_signup'];
     $email_signup = $_POST['email_signup'];
@@ -58,7 +60,7 @@ if (isset($_POST['signup_submit'])) {
         } else {
 
             // Check the length of the password
-            if ($password_signup < 6) {
+            if (strlen($password_signup) < 6) {
                 $REG_ERRORS['pass_short'] = 'Password is too short. Min: 6 chars.';
             } else {
                 $password_signup = $conn->real_escape_string($password_signup);
@@ -67,7 +69,9 @@ if (isset($_POST['signup_submit'])) {
         }
     }
 
-
-
+    // CHeck if there are any errors inside the $REG_ERRORS associative array
+    if (empty($REG_ERRORS)) {
+        // If there are no errors, proceed with adding values to database.
+    }
 }
 
