@@ -45,22 +45,30 @@ if (!isset($_SESSION['logged_in'])) {
 
 </nav>
 
+
 <div class="container">
     <div class="row">
         <div class="col-lg-6 feed">
-            <div class="row feed-row">
+            <?php
+
+            $posts = $conn->query("SELECT pid, uid, username, media, img, video FROM posts INNER JOIN users ON posts.uid = users.id");
+
+            if ($posts->num_rows > 0) {
+                while ($row = $posts->fetch_assoc()) {
+                    $display = <<<display
+<div class="row feed-row">
                 <div class="col-lg-12 feed-post">
                     <div class="feed-user">
                         <img src="../assets/img/me_thumbnail.png" class="thumbnail" height="40"/>
-                        <h3><a href="#">username</a></h3>
+                        <h3><a href="#">{$row['username']}</a></h3>
                     </div>
                     <div class="feed-media">
-                        <img src="../assets/img/photo.jpeg" class="feed-img">
+                        <img src="{$row['media']}" class="feed-img">
                     </div>
                     <div class="feed-reaction">
                         <div class="row">
                             <div class="col-6">
-                                <i class="fas fa-fw fa-2x fa-heart"></i>
+                                <i class="far fa-fw fa-2x fa-heart"></i>
                             </div>
                             <div class="col-6">
                                 <i class="far fa-fw fa-2x fa-comment"></i>
@@ -69,10 +77,47 @@ if (!isset($_SESSION['logged_in'])) {
                     </div>
                 </div>
             </div>
+display;
 
+                    echo $display;
+                }
+
+            }
+            ?>
         </div>
     </div>
 </div>
+
+
+<!-- Blueprint for posts-->
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-lg-6 feed">-->
+<!--            <div class="row feed-row">-->
+<!--                <div class="col-lg-12 feed-post">-->
+<!--                    <div class="feed-user">-->
+<!--                        <img src="../assets/img/me_thumbnail.png" class="thumbnail" height="40"/>-->
+<!--                        <h3><a href="#">username</a></h3>-->
+<!--                    </div>-->
+<!--                    <div class="feed-media">-->
+<!--                        <img src="../assets/img/photo.jpeg" class="feed-img">-->
+<!--                    </div>-->
+<!--                    <div class="feed-reaction">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-6">-->
+<!--                                <i class="fas fa-fw fa-2x fa-heart"></i>-->
+<!--                            </div>-->
+<!--                            <div class="col-6">-->
+<!--                                <i class="far fa-fw fa-2x fa-comment"></i>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!---->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <?php require_once "../../includes/scripts.php"; ?>
 </body>
