@@ -83,6 +83,10 @@
       padding: 0.5rem 0;
       text-align: center;
       border-bottom: 1px solid #ccc; }
+      .feed-row .feed-post .feed-reaction span {
+        position: absolute;
+        top: 5px;
+        margin-left: 5px; }
       .feed-row .feed-post .feed-reaction .far.fa-heart:hover {
         cursor: pointer;
         color: #e74c3c; }

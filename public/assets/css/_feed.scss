@@ -56,6 +56,12 @@
       text-align: center;
       border-bottom: 1px solid $gray-border;
 
+      span {
+        position: absolute;
+        top: 5px;
+        margin-left: 5px;
+      }
+
       .far {
         &.fa-heart:hover {
           cursor: pointer;

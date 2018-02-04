@@ -50,17 +50,32 @@ if (!isset($_SESSION['logged_in'])) {
     <div class="row">
         <div class="col-lg-6 feed">
             <?php
-            $posts = $conn->query("SELECT * FROM posts INNER JOIN users ON posts.username = users.username LIMIT 10");
+            $username = $_SESSION['username'];
+            // Select all posts and their respective usernames and profile images
+            $posts = $conn->query("SELECT * FROM posts INNER JOIN users ON posts.username = users.username ORDER BY pid DESC LIMIT 10");
 
             while ($row = $posts->fetch_assoc()) {
+
+                // Set the $post_id to be the value of post id from fetched row.
                 $post_id = $row['pid'];
 
-                $like_status = $conn->query("SELECT * FROM posts_likes WHERE pid = '$post_id'");
+                // Get the like status of the user (if user liked the image or not)
+                $like_status = $conn->query("SELECT * FROM posts_likes WHERE pid = '$post_id' AND username = '$username'");
 
+                // If the liked value is 1 then change the FontAwesome icon to fas
                 if ($like_status->fetch_assoc()['liked'] == 1) {
                     $liked = "fas";
                 } else {
                     $liked = "far";
+                }
+
+                // Get the total amount of likes of the specific image
+                $like_total = $conn->query("SELECT SUM(liked) FROM posts_likes WHERE pid = '$post_id'");
+                $total_likes = $like_total->fetch_assoc()['SUM(liked)'];
+
+                // If the amount of likes is less than 1 then set the total likes to empty string.
+                if ($total_likes < 1) {
+                    $total_likes = '';
                 }
 
 
@@ -78,7 +93,7 @@ if (!isset($_SESSION['logged_in'])) {
                     <div class=\"feed-reaction\">
                         <div class=\"row\">
                             <div class=\"col-6\">
-                                <i class=\"{$liked} fa-fw fa-2x fa-heart\"></i>
+                                <i class=\"{$liked} fa-fw fa-2x fa-heart\" id=\"postid_{$row['pid']}\"></i> <span>{$total_likes}</span>
                             </div>
                             <div class=\"col-6\">
                                 <i class=\"far fa-fw fa-2x fa-comment\"></i>
@@ -96,10 +111,9 @@ if (!isset($_SESSION['logged_in'])) {
         </div>
     </div>
 </div>
-
-
-
-
 <?php require_once "../../includes/scripts.php"; ?>
+
+
+
 </body>
 </html>
