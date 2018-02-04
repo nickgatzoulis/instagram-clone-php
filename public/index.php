@@ -41,6 +41,7 @@
                     <input type="text" class="form-control" id="email_signup" name="email_signup" aria-describedby="username" placeholder="<? echo $LNG['email']; ?>">
                 </div>
                 <?php if (isset($REG_ERRORS['email_empty'])) { echo "<label>{$REG_ERRORS['email_empty']}</label>"; } ?>
+                <?php if (isset($REG_ERRORS['email_empty'])) { echo "<label>{$REG_ERRORS['email_exists']}</label>"; } ?>
 
                 <div class="form-group">
                     <input type="password" class="form-control" id="password_signup" name="password_signup" placeholder="<? echo $LNG['password']; ?>">

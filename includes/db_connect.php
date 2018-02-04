@@ -10,6 +10,4 @@ define('DB_PORT', 3306);
 
 if ($conn->connect_error) {
     die('Connection failed');
-} else {
-    echo "Successfully connected";
 }
