@@ -142,6 +142,7 @@ if (isset($_POST['signup_submit'])) {
 
         if ($conn->query($signupQuery)) {
             $_SESSION['logged_in'] = true;
+            $_SESSION['username'] = $username;
             header('Location: /public/feed');
         }
     }
