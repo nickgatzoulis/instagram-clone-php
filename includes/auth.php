@@ -6,9 +6,67 @@
  * Time: 23:29
  */
 
-
 $REG_ERRORS = [];
+$LOGIN_ERRORS = [];
 
+// Log In logic
+if (isset($_POST['login_submit'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Check if username is empty
+    if (empty($username)) {
+        $LOGIN_ERRORS['username_empty'] = 'Username is empty.';
+    } else {
+        $username = strip_tags($username);
+        $username = str_replace(' ', '', $username);
+        $username = $conn->real_escape_string($username);
+    }
+
+
+    // Check if password is empty
+    if (empty($password)) {
+        $LOGIN_ERRORS['pass_empty'] = 'Password is empty';
+    } else {
+        $password = strip_tags($password);
+
+        // Check if password is short
+        if (strlen($password) < 6) {
+            $LOGIN_ERRORS['pass_short'] = 'Password is too short';
+        } else {
+            $password = $conn->real_escape_string($password);
+        }
+    }
+
+    // Check if there are any login errors
+    if (empty($LOGIN_ERRORS)) {
+        // Step 1 - Fetch user
+        $result = $conn->query("SELECT * FROM users WHERE username = '$username'");
+
+        // Step 2 - Check if user with supplied username exists.
+        if ($result->num_rows == 0) {
+            $LOGIN_ERRORS['details_invalid'] = 'Username or password is wrong.';
+        } else {
+            $user = $result->fetch_assoc();
+
+            // Step 3 - Check if supplied password ($password) is the same as fetched user's password
+            if (password_verify($password, $user['password'])) {
+                // Set the session's username to the fetched user's username
+                $_SESSION['username'] = $user['username'];
+
+                // This is how we know user is logged in
+                $_SESSION['logged_in'] = true;
+
+                header('Location: /public/feed');
+            } else {
+                $LOGIN_ERRORS['details_invalid'] = 'Username or password is wrong';
+            }
+        }
+    }
+}
+
+
+// Sign Up logic
 if (isset($_POST['signup_submit'])) {
     $username = $_POST['username_signup'];
     $email_signup = $_POST['email_signup'];
@@ -23,6 +81,14 @@ if (isset($_POST['signup_submit'])) {
         $username = strip_tags($username);
         $username = str_replace(' ', '', $username);
         $username = $conn->real_escape_string($username);
+
+        // Check if user with that username exists
+        $usernameExistsQuery = $conn->query("SELECT * FROM users WHERE username = '$username'");
+
+        if ($usernameExistsQuery->num_rows > 0) {
+            $REG_ERRORS['username_exists'] = 'Username exists';
+            echo "username exists";
+        }
     }
 
     if (empty($email_signup)) {
@@ -39,6 +105,7 @@ if (isset($_POST['signup_submit'])) {
 
         if ($emailExistsQuery->num_rows > 0) {
             $REG_ERRORS['email_exists'] = 'Email already exists.';
+            echo "email exists";
         }
     }
 
@@ -74,7 +141,7 @@ if (isset($_POST['signup_submit'])) {
 
         if ($conn->query($signupQuery)) {
             $_SESSION['logged_in'] = true;
-            header('Location: feed');
+            header('Location: /public/feed');
         }
     }
 }

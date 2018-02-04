@@ -21,9 +21,14 @@
                 <div class="form-group">
                     <input type="text" class="form-control" id="username" name="username" aria-describedby="username" placeholder="<? echo $LNG['username']; ?>">
                 </div>
+                <?php if (isset($LOGIN_ERRORS['username_empty'])) { echo "<label>{$LOGIN_ERRORS['username_empty']}</label>"; } ?>
                 <div class="form-group">
                     <input type="password" class="form-control" id="password" name="password" placeholder="<? echo $LNG['password']; ?>">
                 </div>
+                <?php if (isset($LOGIN_ERRORS['pass_short'])) { echo "<label>{$LOGIN_ERRORS['pass_short']}</label>"; } ?>
+                <?php if (isset($LOGIN_ERRORS['pass_empty'])) { echo "<label>{$LOGIN_ERRORS['pass_empty']}</label>"; } ?>
+                <?php if (isset($LOGIN_ERRORS['details_invalid'])) { echo "<label>{$LOGIN_ERRORS['details_invalid']}</label>"; } ?>
+
                 <button type="submit" name="login_submit" class="btn btn-primary"><? echo $LNG['login']; ?></button>
                 <p class="helper"><? echo $LNG['helper_login_1']; ?> <a href="#signup"><? echo $LNG['helper_login_2']; ?></a></p>
             </form>
@@ -36,12 +41,13 @@
                     <input type="text" class="form-control" id="username_signup" name="username_signup" aria-describedby="username" placeholder="<? echo $LNG['username']; ?>">
                 </div>
                 <?php if (isset($REG_ERRORS['username_empty'])) { echo "<label>{$REG_ERRORS['username_empty']}</label>"; } ?>
+                <?php if (isset($REG_ERRORS['username_exists'])) { echo "<label>{$REG_ERRORS['username_exists']}</label>"; } ?>
 
                 <div class="form-group">
                     <input type="text" class="form-control" id="email_signup" name="email_signup" aria-describedby="username" placeholder="<? echo $LNG['email']; ?>">
                 </div>
                 <?php if (isset($REG_ERRORS['email_empty'])) { echo "<label>{$REG_ERRORS['email_empty']}</label>"; } ?>
-                <?php if (isset($REG_ERRORS['email_empty'])) { echo "<label>{$REG_ERRORS['email_exists']}</label>"; } ?>
+                <?php if (isset($REG_ERRORS['email_exists'])) { echo "<label>{$REG_ERRORS['email_exists']}</label>"; } ?>
 
                 <div class="form-group">
                     <input type="password" class="form-control" id="password_signup" name="password_signup" placeholder="<? echo $LNG['password']; ?>">
