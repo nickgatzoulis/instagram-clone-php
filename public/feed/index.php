@@ -5,5 +5,3 @@
  * Date: 02/02/2018
  * Time: 16:24
  */
-
-echo "This is the feed page";

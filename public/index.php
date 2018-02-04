@@ -1,5 +1,6 @@
 <?php require_once "../includes/global_inc.php"; ?>
 
+<?php if ($_SESSION['logged_in'] = true) { header('Location: /public/feed'); }?>
 <?php require_once "../includes/auth.php";?>
 
 <!doctype html>
