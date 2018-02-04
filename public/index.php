@@ -35,16 +35,22 @@
                 <div class="form-group">
                     <input type="text" class="form-control" id="username_signup" name="username_signup" aria-describedby="username" placeholder="<? echo $LNG['username']; ?>">
                 </div>
+                <?php if (isset($REG_ERRORS['username_empty'])) { echo "<label>{$REG_ERRORS['username_empty']}</label>"; } ?>
+
                 <div class="form-group">
                     <input type="text" class="form-control" id="email_signup" name="email_signup" aria-describedby="username" placeholder="<? echo $LNG['email']; ?>">
                 </div>
+                <?php if (isset($REG_ERRORS['email_empty'])) { echo "<label>{$REG_ERRORS['email_empty']}</label>"; } ?>
+
                 <div class="form-group">
                     <input type="password" class="form-control" id="password_signup" name="password_signup" placeholder="<? echo $LNG['password']; ?>">
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" id="password_signup_c" name="password_signup_c" placeholder="<? echo $LNG['password_c']; ?>">
                 </div>
-
+                <?php if (isset($REG_ERRORS['pass_short'])) { echo "<label>{$REG_ERRORS['pass_short']}</label>"; } ?>
+                <?php if (isset($REG_ERRORS['pass_empty'])) { echo "<label>{$REG_ERRORS['pass_empty']}</label>"; } ?>
+                <?php if (isset($REG_ERRORS['pass_mismatch'])) { echo "<label>{$REG_ERRORS['pass_mismatch']}</label>"; } ?>
                 <button type="submit" name="signup_submit" class="btn btn-primary"><? echo $LNG['signup']; ?></button>
                 <p class="helper"><? echo $LNG['helper_signup_1']; ?> <a href="#login"><? echo $LNG['helper_signup_2']; ?></a></p>
             </form>
