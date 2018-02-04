@@ -1,5 +1,7 @@
 <?php require_once "../includes/global_inc.php"; ?>
 
+<?php require_once "../includes/auth.php";?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,33 +17,42 @@
 
             <!-- Login Form -->
             <form method="post" id="login-form">
+                <h3><? echo $LNG['login']; ?></h3>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="username" aria-describedby="username" placeholder="<? echo $LNG['username']; ?>">
+                    <input type="text" class="form-control" id="username" name="username" aria-describedby="username" placeholder="<? echo $LNG['username']; ?>">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" id="password" placeholder="<? echo $LNG['password']; ?>">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="<? echo $LNG['password']; ?>">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <p class="helper"><? echo $LNG['helper_login_1']; ?> <a href="#"><? echo $LNG['helper_login_2']; ?></a></p>
+                <button type="submit" name="login_submit" class="btn btn-primary"><? echo $LNG['login']; ?></button>
+                <p class="helper"><? echo $LNG['helper_login_1']; ?> <a href="#signup"><? echo $LNG['helper_login_2']; ?></a></p>
             </form>
             <!-- /Login Form -->
 
-            <!-- Signup Form -->
-<!--            <form method="post" id="signup-form">-->
-<!--                <div class="form-group">-->
-<!--                    <input type="text" class="form-control" id="username" aria-describedby="username" placeholder="--><?// echo $LNG['username']; ?><!--">-->
-<!--                </div>-->
-<!--                <div class="form-group">-->
-<!--                    <input type="password" class="form-control" id="password" placeholder="--><?// echo $LNG['password']; ?><!--">-->
-<!--                </div>-->
-<!--                <button type="submit" class="btn btn-primary">Submit</button>-->
-<!--                <p class="helper">Don't have an account? <a href="#">Create one!</a></p>-->
-<!--            </form>-->
-            <!-- /Signup Form -->
+            <!-- Login Form -->
+            <form method="post" id="signup-form">
+                <h3><? echo $LNG['signup']; ?></h3>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="username_signup" name="username_signup" aria-describedby="username" placeholder="<? echo $LNG['username']; ?>">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="email_signup" name="email_signup" aria-describedby="username" placeholder="<? echo $LNG['email']; ?>">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password_signup" name="password_signup" placeholder="<? echo $LNG['password']; ?>">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password_signup_c" name="password_signup_c" placeholder="<? echo $LNG['password_c']; ?>">
+                </div>
 
+                <button type="submit" name="signup_submit" class="btn btn-primary"><? echo $LNG['signup']; ?></button>
+                <p class="helper"><? echo $LNG['helper_signup_1']; ?> <a href="#login"><? echo $LNG['helper_signup_2']; ?></a></p>
+            </form>
+            <!-- /Login Form -->
         </div>
     </div>
 </div>
+
 
 <?php require_once "../includes/scripts.php"; ?>
 </body>

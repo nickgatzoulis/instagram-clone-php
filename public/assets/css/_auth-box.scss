@@ -10,7 +10,12 @@
   color: $gray-border;
 
   .logo {
-    margin: 3rem auto;
+    margin: 2rem auto;
+  }
+
+  h3 {
+    color: $dark-navy;
+    margin-bottom: 2rem;
   }
 
   input {
@@ -19,6 +24,9 @@
     border-radius: 0;
     background: $input-bg;
 
+    &:focus {
+      box-shadow: 0 0;
+    }
   }
 
   button {
@@ -38,4 +46,13 @@
     font-size: 15px;
     color: #aaa;
   }
+
+  label {
+    color: $red;
+  }
+
+  #signup-form {
+    display: none;
+  }
+
 }
