@@ -64,9 +64,11 @@ if (!isset($_SESSION['logged_in'])) {
 
                 // If the liked value is 1 then change the FontAwesome icon to fas
                 if ($like_status->fetch_assoc()['liked'] == 1) {
-                    $liked = "fas";
+                    $liked_icon = "fas";
+                    $liked = 'unlike';
                 } else {
-                    $liked = "far";
+                    $liked_icon = "far";
+                    $liked = 'like';
                 }
 
                 // Get the total amount of likes of the specific image
@@ -93,7 +95,7 @@ if (!isset($_SESSION['logged_in'])) {
                     <div class=\"feed-reaction\">
                         <div class=\"row\">
                             <div class=\"col-6\">
-                                <i class=\"{$liked} fa-fw fa-2x fa-heart\" id=\"postid_{$row['pid']}\"></i> <span>{$total_likes}</span>
+                                <i class=\"{$liked_icon} fa-fw fa-2x fa-heart {$liked}\" id=\"postid_{$row['pid']}\"></i> <span>{$total_likes}</span>
                             </div>
                             <div class=\"col-6\">
                                 <i class=\"far fa-fw fa-2x fa-comment\"></i>
@@ -114,6 +116,6 @@ if (!isset($_SESSION['logged_in'])) {
 <?php require_once "../../includes/scripts.php"; ?>
 
 
-
+<script src="../assets/js/like_action.js"></script>
 </body>
 </html>

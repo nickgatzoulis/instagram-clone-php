@@ -4,9 +4,7 @@
  * User: nick
  * Date: 03/02/2018
  * Time: 23:29
- * 1) Add multi-language support
  * 2) Add check against username characters for LOGIN & SIGNUP (minlength: 5)
- * 3) Fix session issues
  */
 
 $REG_ERRORS = [];
