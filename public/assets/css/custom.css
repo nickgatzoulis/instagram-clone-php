@@ -12,6 +12,8 @@
   .auth-box h3 {
     color: #34495e;
     margin-bottom: 2rem; }
+  .auth-box h4 {
+    color: #34495e; }
   .auth-box input {
     border: 0;
     border-bottom: 1px solid #ccc;

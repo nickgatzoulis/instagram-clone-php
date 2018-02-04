@@ -1,6 +1,12 @@
 <?php require_once "../includes/global_inc.php"; ?>
+<?php
 
-<?php if ($_SESSION['logged_in'] = true) { header('Location: /public/feed'); }?>
+if (!empty($_SESSION['logged_in'])) {
+    if ($_SESSION['logged_in'] == true) {
+        header('Location: /public/feed');
+    }
+}
+?>
 <?php require_once "../includes/auth.php";?>
 
 <!doctype html>
@@ -69,5 +75,6 @@
 
 
 <?php require_once "../includes/scripts.php"; ?>
+<script src="<?php $_SERVER['DOCUMENT_ROOT']; ?>/public/assets/js/auth.js"></script>
 </body>
 </html>

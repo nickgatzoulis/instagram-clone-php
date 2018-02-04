@@ -19,7 +19,7 @@ if (isset($_POST['login_submit'])) {
 
     // Check if username is empty
     if (empty($username)) {
-        $LOGIN_ERRORS['username_empty'] = 'Username is empty.';
+        $LOGIN_ERRORS['username_empty'] = $LNG['username_empty'];
     } else {
         $username = strip_tags($username);
         $username = str_replace(' ', '', $username);
@@ -29,13 +29,13 @@ if (isset($_POST['login_submit'])) {
 
     // Check if password is empty
     if (empty($password)) {
-        $LOGIN_ERRORS['pass_empty'] = 'Password is empty';
+        $LOGIN_ERRORS['pass_empty'] = $LNG['pass_empty'];
     } else {
         $password = strip_tags($password);
 
         // Check if password is short
         if (strlen($password) < 6) {
-            $LOGIN_ERRORS['pass_short'] = 'Password is too short';
+            $LOGIN_ERRORS['pass_short'] = $LNG['pass_short'];
         } else {
             $password = $conn->real_escape_string($password);
         }
@@ -47,7 +47,7 @@ if (isset($_POST['login_submit'])) {
         $result = $conn->query("SELECT * FROM users WHERE username = '$username'");
         // Step 2 - Check if user with supplied username exists.
         if ($result->num_rows == 0) {
-            $LOGIN_ERRORS['details_invalid'] = 'Username or password is wrong.';
+            $LOGIN_ERRORS['details_invalid'] = $LNG['details_invalid'];
         } else {
             $user = $result->fetch_assoc();
             print_r($user);
@@ -62,7 +62,7 @@ if (isset($_POST['login_submit'])) {
 
                 header('Location: /public/feed');
             } else {
-                $LOGIN_ERRORS['details_invalid'] = 'Username or password is wrong';
+                $LOGIN_ERRORS['details_invalid'] = $LNG['details_invalid'];
             }
         }
     }
@@ -78,7 +78,7 @@ if (isset($_POST['signup_submit'])) {
 
 
     if (empty($username)) {
-        $REG_ERRORS['username_empty'] = 'Username is empty.';
+        $REG_ERRORS['username_empty'] = $LNG['username_empty'];
     } else {
         // Username sanitize and clean up
         $username = strip_tags($username);
@@ -89,13 +89,12 @@ if (isset($_POST['signup_submit'])) {
         $usernameExistsQuery = $conn->query("SELECT * FROM users WHERE username = '$username'");
 
         if ($usernameExistsQuery->num_rows > 0) {
-            $REG_ERRORS['username_exists'] = 'Username exists';
-            echo "username exists";
+            $REG_ERRORS['username_exists'] = $LNG['username_exists'];
         }
     }
 
     if (empty($email_signup)) {
-        $REG_ERRORS['email_empty'] = 'Email is empty.';
+        $REG_ERRORS['email_empty'] = $LNG['email_empty'];
     } else {
         // Email sanitize and clean up
         $email_signup = strip_tags($email_signup);
@@ -107,15 +106,14 @@ if (isset($_POST['signup_submit'])) {
         $emailExistsQuery = $conn->query("SELECT * FROM users WHERE email = '$email_signup'");
 
         if ($emailExistsQuery->num_rows > 0) {
-            $REG_ERRORS['email_exists'] = 'Email already exists.';
-            echo "email exists";
+            $REG_ERRORS['email_exists'] = $LNG['email_exists'];
         }
     }
 
 
     // Check if passwords are empty or not
     if (empty($password_signup) || empty($password_signup_c)) {
-        $REG_ERRORS['pass_empty'] = 'Please fill in the password field(s).';
+        $REG_ERRORS['pass_empty'] = $LNG['pass_empty'];
     } else {
 
         // Strip the tags
@@ -124,12 +122,12 @@ if (isset($_POST['signup_submit'])) {
 
         // Check if passwords are the exactly same
         if ($password_signup != $password_signup_c) {
-            $REG_ERRORS['pass_mismatch'] = 'Passwords do not match.';
+            $REG_ERRORS['pass_mismatch'] = $LNG['pass_mismatch'];
         } else {
 
             // Check the length of the password
             if (strlen($password_signup) < 6) {
-                $REG_ERRORS['pass_short'] = 'Password is too short. Min: 6 chars.';
+                $REG_ERRORS['pass_short'] = $LNG['pass_short'];
             } else {
                 $password_signup = $conn->real_escape_string(password_hash($password_signup, PASSWORD_BCRYPT));
             }
