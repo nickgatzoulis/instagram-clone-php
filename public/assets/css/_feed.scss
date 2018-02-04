@@ -52,8 +52,28 @@
     }
 
     .feed-reaction {
+      padding: 0.5rem 0;
       text-align: center;
+      border-bottom: 1px solid $gray-border;
 
+      .far {
+        &.fa-heart:hover {
+          cursor: pointer;
+          color: $red;
+        }
+
+        &.fa-comment:hover {
+          cursor: pointer;
+          color: $blue;
+        }
+      }
+
+      .fas {
+        cursor: pointer;
+        &.fa-heart {
+          color: $red;
+        }
+      }
     }
   }
 }

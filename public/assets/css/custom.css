@@ -80,7 +80,19 @@
     .feed-row .feed-post .feed-media img.feed-img {
       max-width: 100%; }
     .feed-row .feed-post .feed-reaction {
-      text-align: center; }
+      padding: 0.5rem 0;
+      text-align: center;
+      border-bottom: 1px solid #ccc; }
+      .feed-row .feed-post .feed-reaction .far.fa-heart:hover {
+        cursor: pointer;
+        color: #e74c3c; }
+      .feed-row .feed-post .feed-reaction .far.fa-comment:hover {
+        cursor: pointer;
+        color: #3498db; }
+      .feed-row .feed-post .feed-reaction .fas {
+        cursor: pointer; }
+        .feed-row .feed-post .feed-reaction .fas.fa-heart {
+          color: #e74c3c; }
 
 body {
   background: #fafafa; }

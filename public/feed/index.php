@@ -60,7 +60,7 @@ if (!isset($_SESSION['logged_in'])) {
                     <div class="feed-reaction">
                         <div class="row">
                             <div class="col-6">
-                                <i class="far fa-fw fa-2x fa-heart"></i>
+                                <i class="fas fa-fw fa-2x fa-heart"></i>
                             </div>
                             <div class="col-6">
                                 <i class="far fa-fw fa-2x fa-comment"></i>
