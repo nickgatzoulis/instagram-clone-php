@@ -57,9 +57,12 @@ while ($row = $posts->fetch_assoc()) {
                                 <i class=\"{$liked_icon} fa-fw fa-2x fa-heart {$liked}\" id=\"postid_{$row['pid']}\"></i> <span>{$total_likes}</span>
                             </div>
                             <div class=\"col-6\">
-                                <i class=\"far fa-fw fa-2x fa-comment\"></i>
+                                <i class=\"far fa-fw fa-2x fa-comment comment\" id=\"postid_{$row['pid']}\"></i>
                             </div>
                         </div>
+                    </div>
+                    <div class=\"feed-comments\" id=\"postid_{$row['pid']}\">
+                    
                     </div>
                 </div>
             </div>

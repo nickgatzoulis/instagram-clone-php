@@ -58,6 +58,6 @@ if (!isset($_SESSION['logged_in'])) {
 <?php require_once "../../includes/scripts.php"; ?>
 
 <script src="../assets/js/like_action.js"></script>
-
+<script src="../assets/js/get_comments.js"></script>
 </body>
 </html>
