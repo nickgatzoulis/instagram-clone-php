@@ -65,7 +65,32 @@ while ($row = $posts->fetch_assoc()) {
             </div>
                 ";
     } else {
-
+        echo
+        "
+        <div class=\"row feed-row\">
+                <div class=\"col-lg-12 feed-post\">
+                    <div class=\"feed-user\">
+                        <img src=\"{$row['profile_img']}\" class=\"thumbnail\" height=\"40\"/>
+                        <h3><a href=\"/public/user/{$row['username']}\">{$row['username']}</a></h3>
+                    </div>
+                    <div class=\"feed-media\">
+                        <video controls class=\"feed-video\">
+                            <source src=\"{$row['media']}\" type=\"video/mp4\">
+                        </video>
+                    </div>
+                    <div class=\"feed-reaction\">
+                        <div class=\"row\">
+                            <div class=\"col-6\">
+                                <i class=\"{$liked_icon} fa-fw fa-2x fa-heart {$liked}\" id=\"postid_{$row['pid']}\"></i> <span>{$total_likes}</span>
+                            </div>
+                            <div class=\"col-6\">
+                                <i class=\"far fa-fw fa-2x fa-comment\"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ";
     }
 
 

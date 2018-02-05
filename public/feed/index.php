@@ -59,6 +59,5 @@ if (!isset($_SESSION['logged_in'])) {
 
 <script src="../assets/js/like_action.js"></script>
 
-
 </body>
 </html>

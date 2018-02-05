@@ -79,6 +79,8 @@
         border: 1px solid #ccc; }
     .feed-row .feed-post .feed-media img.feed-img {
       max-width: 100%; }
+    .feed-row .feed-post .feed-media video {
+      max-width: 100%; }
     .feed-row .feed-post .feed-reaction {
       padding: 0.5rem 0;
       text-align: center;
