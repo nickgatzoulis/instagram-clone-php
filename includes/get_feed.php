@@ -31,6 +31,14 @@ while ($row = $posts->fetch_assoc()) {
         $total_likes = '';
     }
 
+    //! Re-use this part of code for Profile pages
+    // Check if profile_img is NULL
+    if (empty($row['profile_img'])) {
+
+        // If it's NULL then set the profile image to the default one.
+        $row['profile_img'] = '../assets/uploads/profile/default.jpg';
+    }
+
 
     echo
     "
