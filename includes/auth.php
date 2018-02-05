@@ -48,7 +48,6 @@ if (isset($_POST['login_submit'])) {
             $LOGIN_ERRORS['details_invalid'] = $LNG['details_invalid'];
         } else {
             $user = $result->fetch_assoc();
-            print_r($user);
 
             // Step 3 - Check if supplied password ($password) is the same as fetched user's password
             if (password_verify($password, $user['password'])) {

@@ -21,5 +21,7 @@ function unlike_action($pid, $username) {
         $conn->query("UPDATE posts_likes SET liked = 0 WHERE pid = '$pid' AND username='$username'");
     }
 }
-
 unlike_action($pid, $username);
+
+
+
