@@ -39,9 +39,9 @@ while ($row = $posts->fetch_assoc()) {
         $row['profile_img'] = '../assets/uploads/profile/default.jpg';
     }
 
-
-    echo
-    "
+    if ($row['img'] == 1) {
+        echo
+        "
                 <div class=\"row feed-row\">
                 <div class=\"col-lg-12 feed-post\">
                     <div class=\"feed-user\">
@@ -64,6 +64,12 @@ while ($row = $posts->fetch_assoc()) {
                 </div>
             </div>
                 ";
+    } else {
+
+    }
+
+
+
 }
 
 ?>
