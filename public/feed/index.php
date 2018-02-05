@@ -72,7 +72,10 @@ if (!isset($_SESSION['logged_in'])) {
                 method: 'POST',
                 data: {pid:pid},
                 success: (data) => {
-                    alert('successfully liked post id: #' + pid);
+                    event.target.classList.remove('far');
+                    event.target.classList.add('fas');
+                    event.target.classList.remove('like');
+                    event.target.classList.add('unlike');
                 }
             });
         });
@@ -87,7 +90,10 @@ if (!isset($_SESSION['logged_in'])) {
                 method: 'POST',
                 data: {unlike_pid:unlike_pid},
                 success: (data) => {
-                    alert('successfully unliked post id: #' + unlike_pid);
+                    event.target.classList.remove('fas');
+                    event.target.classList.add('far');
+                    event.target.classList.remove('unlike');
+                    event.target.classList.add('like');
                 }
             });
         });
