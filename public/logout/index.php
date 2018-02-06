@@ -14,12 +14,6 @@
 //
 //if (empty($_SESSION['logged_in']))
 
-//if (empty($_SESSION['logged_in'])) {
-//    header('Location: /public');
-//} else {
-//    session_unset();
-//    session_destroy();
-//}
 
 if (empty($_SESSION['logged_in'])) {
     header('Location: /public');

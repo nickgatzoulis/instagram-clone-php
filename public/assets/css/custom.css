@@ -51,7 +51,7 @@
   margin: 0 auto; }
 
 .feed-row {
-  margin: 3rem auto;
+  margin: 2rem auto;
   background: #fff;
   box-shadow: 0 0 5px 0;
   border: 1px solid #ccc;
@@ -115,6 +115,19 @@
       border-top: 1px solid #ccc;
       padding: 0.25rem 0.5rem;
       font-weight: 300; }
+
+.upload {
+  margin: 0 auto;
+  text-align: center; }
+  .upload .upload-content {
+    margin: 2rem auto auto; }
+    .upload .upload-content .fas {
+      cursor: pointer;
+      color: #34495e; }
+      .upload .upload-content .fas:hover {
+        color: #444; }
+    .upload .upload-content input {
+      display: none; }
 
 body {
   background: #fafafa; }

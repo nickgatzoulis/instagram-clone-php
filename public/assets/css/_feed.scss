@@ -2,7 +2,7 @@
   margin: 0 auto;
 }
 .feed-row {
-  margin: 3rem auto;
+  margin: 2rem auto;
   background: #fff;
   box-shadow: 0 0 5px 0;
   border: 1px solid $gray-border;
@@ -116,6 +116,28 @@
         padding: 0.25rem 0.5rem;
         font-weight: 300;
       }
+    }
+  }
+}
+
+.upload {
+  margin: 0 auto;
+  text-align: center;
+
+  .upload-content {
+    margin: 2rem auto auto;
+
+    .fas {
+      cursor: pointer;
+      color: $dark-navy;
+
+      &:hover {
+        color: #444;
+      }
+    }
+
+    input {
+      display: none;
     }
   }
 }
