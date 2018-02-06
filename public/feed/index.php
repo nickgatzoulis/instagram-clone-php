@@ -18,9 +18,9 @@ if (!isset($_SESSION['logged_in'])) {
         <a class="navbar-brand" href="#">
             <img src="../assets/img/logo2.png" height="40"/>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -93,7 +93,7 @@ if (!isset($_SESSION['logged_in'])) {
 </div>
 <?php require_once "../../includes/scripts.php"; ?>
 
-<script src="../assets/js/like_action.js"></script>
-<script src="../assets/js/get_comments.js"></script>
+<!--<script src="../assets/js/like_action.js"></script>-->
+<!--<script src="../assets/js/get_comments.js"></script>-->
 </body>
 </html>
