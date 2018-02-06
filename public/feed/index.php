@@ -81,6 +81,29 @@ if (!isset($_SESSION['logged_in'])) {
 <!--    </div>-->
 <!--</div>-->
 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 upload">
+            <div class="row upload-content">
+                <div class="col-lg-6 upload-photo">
+
+                    <label for="photo-input">
+                        <i class="fas fa-fw fa-3x fa-camera-retro"></i>
+                    </label>
+                    <input id="photo-input" type="file"/>
+
+                </div>
+                <div class="col-lg-6 upload-video">
+                    <label for="video-input">
+                        <i class="fas fa-fw fa-3x fa-video"></i>
+                    </label>
+                    <input id="video-input" type="file"/>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 <div class="container">
     <div class="row">
