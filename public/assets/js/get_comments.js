@@ -42,7 +42,7 @@ $(document).ready(() => {
                 method: 'POST',
                 data: {pid:pid, comment_content:comment_content},
                 success: (data) => {
-                    // On success, re-load the contents of the c
+                    // On success, re-load the contents of the appropriate comment section
                     $(`#postid_${pid}.feed-comments`).load('../../includes/get_comments.php', {pid:pid});
                 }
             });
