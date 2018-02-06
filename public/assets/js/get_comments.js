@@ -15,7 +15,18 @@ $(document).ready(() => {
     $(".feed").on('keydown', '.post-comment', (event) => {
         if (event.keyCode == 13) {
             let pid = event.target.id.split("_")[1];
-            alert(pid);
+            let comment_content = $(`#postid_${pid}.post-comment`).val();
+
+
+            $.ajax({
+                url: '../../includes/post_comment.php',
+                method: 'POST',
+                data: {pid:pid, comment_content:comment_content},
+                success: (data) => {
+                    $(`#postid_${pid}.feed-comments`).load('../../includes/get_comments.php', {pid:pid});
+                }
+            });
+
         }
 
     });
