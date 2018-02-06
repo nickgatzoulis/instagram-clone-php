@@ -21,6 +21,6 @@ while ($result = $comments->fetch_assoc()) {
     "
     <div class=\"comment\">
         <a href=\"/public/user/{$result['username']}\" class=\"comment-user\">{$result['username']}</a> <span class=\"comment-content\">{$result['comment']}</span>
-    </div>
-    ";
+    </div>";
 }
+echo "<input type=\"text\" class=\"post-comment\" id=\"postid_{$pid}\" placeholder=\"Post a comment...\">";

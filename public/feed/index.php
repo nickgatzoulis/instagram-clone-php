@@ -45,7 +45,7 @@ if (!isset($_SESSION['logged_in'])) {
 
 </nav>
 
-<!-- Testing Blueprint -->
+<!-- Testing Blueprint-->
 <!--<div class="container">-->
 <!--    <div class="row">-->
 <!--        <div class="col-lg-6 feed">-->
@@ -72,6 +72,7 @@ if (!isset($_SESSION['logged_in'])) {
 <!--                        <div class="comment">-->
 <!--                            <a href="#" class="comment-user">nick</a> <span class="comment-content">Hello</span>-->
 <!--                        </div>-->
+<!--                        <input type="text" placeholder="Post a comment...">-->
 <!--                    </div>-->
 <!--                </div>-->
 <!--            </div>-->

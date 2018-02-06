@@ -87,7 +87,7 @@
 
     .feed-comments {
       .comment {
-        padding: 0.25rem 0.5rem;
+        padding: 0.35rem 0.5rem;
 
         a {
           font-weight: bold;
@@ -101,6 +101,16 @@
         .comment-content {
           color: #bbb;
         }
+
+
+      }
+
+      input {
+        width: 100%;
+        border: 0;
+        border-top: 1px solid $gray-border;
+        padding: 0.25rem 0.5rem;
+        font-weight: 300;
       }
     }
   }
