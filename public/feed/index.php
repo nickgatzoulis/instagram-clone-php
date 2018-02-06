@@ -45,6 +45,41 @@ if (!isset($_SESSION['logged_in'])) {
 
 </nav>
 
+<!-- Testing Blueprint -->
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-lg-6 feed">-->
+<!--            <div class="row feed-row">-->
+<!--                <div class="col-lg-12 feed-post">-->
+<!--                    <div class="feed-user">-->
+<!--                        <img src="../assets/img/me_thumbnail.png" class="thumbnail" height="40"/>-->
+<!--                        <h3><a href="#">username</a></h3>-->
+<!--                    </div>-->
+<!--                    <div class="feed-media">-->
+<!--                        <img src="../assets/uploads/posts/img/photo.jpeg" class="feed-img">-->
+<!--                    </div>-->
+<!--                    <div class="feed-reaction">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-6">-->
+<!--                                <i class="fas fa-fw fa-2x fa-heart"></i>-->
+<!--                            </div>-->
+<!--                            <div class="col-6">-->
+<!--                                <i class="far fa-fw fa-2x fa-comment"></i>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="feed-comments">-->
+<!--                        <div class="comment">-->
+<!--                            <a href="#" class="comment-user">nick</a> <span class="comment-content">Hello</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!---->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
 
 <div class="container">
     <div class="row">

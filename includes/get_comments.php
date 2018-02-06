@@ -15,6 +15,12 @@ $pid = $_POST['pid'];
 // Selects all comments of that specific pid
 $comments = $conn->query("SELECT * FROM posts_comments WHERE pid = '$pid'");
 
+// Loop through every fetched row
 while ($result = $comments->fetch_assoc()) {
-    echo $result['comment'];
+    echo
+    "
+    <div class=\"comment\">
+        <a href=\"/public/user/{$result['username']}\" class=\"comment-user\">{$result['username']}</a> <span class=\"comment-content\">{$result['comment']}</span>
+    </div>
+    ";
 }

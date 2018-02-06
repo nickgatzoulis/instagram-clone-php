@@ -99,6 +99,14 @@
         cursor: pointer; }
         .feed-row .feed-post .feed-reaction .fas.fa-heart {
           color: #e74c3c; }
+    .feed-row .feed-post .feed-comments .comment {
+      padding: 0.25rem 0.5rem; }
+      .feed-row .feed-post .feed-comments .comment a {
+        font-weight: bold; }
+      .feed-row .feed-post .feed-comments .comment .comment-user {
+        color: #34495e; }
+      .feed-row .feed-post .feed-comments .comment .comment-content {
+        color: #bbb; }
 
 body {
   background: #fafafa; }
