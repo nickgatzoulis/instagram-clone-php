@@ -118,5 +118,6 @@ if (!isset($_SESSION['logged_in'])) {
 
 <script src="../assets/js/like_action.js"></script>
 <script src="../assets/js/get_comments.js"></script>
+<script src="../assets/js/upload_post.js"></script>
 </body>
 </html>
