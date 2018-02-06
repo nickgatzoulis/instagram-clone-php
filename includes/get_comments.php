@@ -13,7 +13,7 @@ require_once "{$_SERVER['DOCUMENT_ROOT']}/includes/db_connect.php";
 $pid = $_POST['pid'];
 
 // Selects all comments of that specific pid
-$comments = $conn->query("SELECT * FROM posts_comments WHERE pid = '$pid'");
+$comments = $conn->query("SELECT * FROM posts_comments WHERE pid = '$pid' ORDER BY post_date ASC");
 
 // Loop through every fetched row
 while ($result = $comments->fetch_assoc()) {

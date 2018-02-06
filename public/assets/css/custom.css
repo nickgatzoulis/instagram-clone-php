@@ -99,6 +99,8 @@
         cursor: pointer; }
         .feed-row .feed-post .feed-reaction .fas.fa-heart {
           color: #e74c3c; }
+        .feed-row .feed-post .feed-reaction .fas.fa-comment {
+          color: #3498db; }
     .feed-row .feed-post .feed-comments .comment {
       padding: 0.35rem 0.5rem; }
       .feed-row .feed-post .feed-comments .comment a {
